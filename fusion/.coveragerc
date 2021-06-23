@@ -2,6 +2,7 @@
 source = .
 
 omit =
+    */main.py
     */__init__.py
     */settings.py
     */manage.py
@@ -9,6 +10,7 @@ omit =
     */apps.py
     */urls.py
     */admin.py
+    */fusion/asgi.py
     */migrations/*
     */tests/*
     */venv/*
