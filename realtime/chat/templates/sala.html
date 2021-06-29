@@ -9,7 +9,7 @@
 <body>
   <div class="container">
     <textarea id="sala" cols="70" rows="15"></textarea>
-    <input id="texto" type="text" size="100"><br/>
+    <input id="texto" type="text" size="50"><br/>
     {% buttons %}
       <input id="botao" class="btn btn-primary" type="button" value="Entrar" />
     {% endbuttons %}
@@ -44,7 +44,7 @@
     document.querySelector('#botao').onclick = function(e){
         var mensagemInput = document.querySelector('#texto');
         var mensagem = mensagemInput.value;
-        chatSocket.send(JSON.stringfy ({
+        chatSocket.send(JSON.stringify ({
             'mensagem': mensagem
         }));
         mensagemInput.value = '';
