@@ -13,7 +13,8 @@ class IndexView(View):
 
         while not city:
             ret = get_client_data()
-            city = ret['city']
+            if ret:
+                city = ret['city']
 
         q = request.GET.get('key', None)
         loc = request.GET.get('loc', None)
@@ -27,7 +28,7 @@ class IndexView(View):
         if loc:
             location = loc
         if q:
-            items = yelp_search(Keyword=q, location=location)
+            items = yelp_search(keyword=q, location=location)
             context = {
                 'items': items,
                 'city': location,
